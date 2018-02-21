@@ -16,6 +16,10 @@ language:
  msg-broadcast-2: " times experience activities has opened, Duration of "
  msg-broadcast-3: " minute(s)!"
  usage: "\u00a7eUsage: /multiexp enable [multiple] [minute]"
+ papi-holding: "\u00a7aHolding"
+ papi-expired: "\u00a74Expired"
+ papi-time-prefix: "\u00a7e"
+ papi-time-suffix: " Minute(s)"
 multiexp:
  enabled: false
  multiple: 2

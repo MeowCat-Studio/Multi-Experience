@@ -1,36 +1,45 @@
 package org.meowcat.MultiExperience;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
 
-    public static Main plugin;
-
+	public static Main Main;
+	
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        plugin = this;
-        ExpListener listener = new ExpListener();
-        getServer().getPluginManager().registerEvents(listener, plugin);
-        boolean isBroadcast = getConfig().getBoolean("configuration.auto-broadcast-enabled");
-        if (isBroadcast) {
-            ExpThread ExpThread = new ExpThread();
-            ExpThread.start();
+        Main=this;
+        getServer().getPluginManager().registerEvents(new ExpListener(), this);
+        if (getConfig().getBoolean("configuration.auto-broadcast-enabled")) {
+            new ExpThread().start();
         }
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Multi Experience by MeowCat Studio");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Offical Website http://www.meowcat.org/");
+        Plugin plugin = Bukkit.getPluginManager().getPlugin("PlaceholderAPI");
+        if(plugin != null){
+            System.out.println("Hooking PlaceholderAPI");
+            boolean success = new PAPIHooker(this).hook();
+            if(success == true){
+                System.out.println("Hook PlaceholderAPI Successfully!");
+            }else{
+                System.out.println("Hook PlaceholderAPI Failed!");
+            }
+        }
+        this.getLogger().info("Multi Experience by MeowCat Studio");
+        this.getLogger().info("Offical Website http://www.meowcat.org/");
+        this.getLogger().info("[MultiExperience]Plugin Enabled.");
     }
 
     @Override
     public void onDisable() {
         saveConfig();
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Multi Experience by MeowCat Studio");
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Offical Website http://www.meowcat.org/");
+        this.getLogger().info("Multi Experience by MeowCat Studio");
+        this.getLogger().info("Offical Website http://www.meowcat.org/");
+        this.getLogger().info("[MultiExperience]Plugin Disabled.");
     }
 
     @Override
@@ -50,19 +59,15 @@ public class Main extends JavaPlugin implements Listener {
                 getConfig().set("multiexp.enabled", true);
                 getConfig().set("multiexp.multiple", Multiple);
                 getConfig().set("multiexp.tick-time", RemainingTime);
-                String message = getConfig().getString("language.msg-signal-1") + Multiple + getConfig().getString("language.msg-signal-2") + MultiTime + getConfig().getString("language.msg-signal-3");
-                String broadcast = getConfig().getString("language.msg-broadcast-1") + Multiple + getConfig().getString("language.msg-broadcast-2") + MultiTime + getConfig().getString("language.msg-broadcast-3");
-                player.sendMessage(message);
-                getServer().broadcastMessage(broadcast);
+                player.sendMessage(getConfig().getString("language.msg-signal-1") + Multiple + getConfig().getString("language.msg-signal-2") + MultiTime + getConfig().getString("language.msg-signal-3"));
+                getServer().broadcastMessage(getConfig().getString("language.msg-broadcast-1") + Multiple + getConfig().getString("language.msg-broadcast-2") + MultiTime + getConfig().getString("language.msg-broadcast-3"));
             } else {
-            	String usage = getConfig().getString("language.usage");
-            	player.sendMessage(usage);
+            	player.sendMessage(getConfig().getString("language.usage"));
             }
         } else {
-        	String usage = getConfig().getString("language.usage");
         	player.sendMessage("¡ìbMulti Experience by MeowCat Studio");
         	player.sendMessage("¡ìbhttp://www.meowcat.org/");
-        	player.sendMessage(usage);
+        	player.sendMessage(getConfig().getString("language.usage"));
         }
         return true;
     }
