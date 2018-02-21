@@ -1,27 +1,26 @@
 configuration:
- auto-broadcast-enabled: true
- broadcast-interval-time: 1
+  auto-broadcast-enabled: true
+  broadcast-interval-time: 1
 language:
- msg-signal-1: "\u00a7aSet "
- msg-signal-2: " times experience for "
- msg-signal-3: " minute(s) successfully!"
- msg-getexp-1: "\u00a7a"
- msg-getexp-2: " times experience activities is holding, You have got "
- msg-getexp-3: " experience(s)!"
- msg-expired: "\u00a74Multi experience activity has expired!"
- msg-holding-1: "\u00a7a"
- msg-holding-2: " times experience activities is holding, Duration time "
- msg-holding-3: " minute(s)!"
- msg-broadcast-1: "\u00a7aNow "
- msg-broadcast-2: " times experience activities has opened, Duration of "
- msg-broadcast-3: " minute(s)!"
- usage: "\u00a7eUsage: /multiexp enable [multiple] [minute]"
- papi-holding: "\u00a7aHolding"
- papi-expired: "\u00a74Expired"
- papi-time-prefix: "\u00a7e"
- papi-time-suffix: " Minute(s)"
+  msg-signal-1: "\u00a7aSet "
+  msg-signal-2: " times experience for "
+  msg-signal-3: " minute(s) successfully!"
+  msg-getexp-1: "\u00a7a"
+  msg-getexp-2: " times experience activities is holding, You have got "
+  msg-getexp-3: " experience(s)!"
+  msg-expired: "\u00a74Multi experience activity has expired!"
+  msg-ended: "\u00a74Multi experience activity has ended!"
+  msg-holding-1: "\u00a7a"
+  msg-holding-2: " times experience activities is holding, Duration time "
+  msg-holding-3: " minute(s)!"
+  msg-broadcast-1: "\u00a7aNow "
+  msg-broadcast-2: " times experience activities has opened, Duration of "
+  msg-broadcast-3: " minute(s)!"
+  reload: "\u00a7aPlugin reloaded."
+  usage: "\u00a7eUsage: /multiexp enable [multiple] [minute]"
+  papi-expired: "\u00a74Expired"
 multiexp:
- enabled: false
- multiple: 2
- tick-time: 0
+  enabled: false
+  multiple: 2
+  tick-time: 0
  

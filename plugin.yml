@@ -1,7 +1,7 @@
 name: MultiExperience
 main: org.meowcat.MultiExperience.Main
 author: MeowCat Studio MlgmXyysd
-version: 1.0.0
+version: 1.2.0
 softdepend: [PlaceholderAPI]
 prefix: MultiExperience
 commands:
