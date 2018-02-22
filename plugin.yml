@@ -8,7 +8,7 @@ commands:
   multiexp:
     permission: multiexp.admin
     description: Multi Experience plugin Info
-    usage: /<command> enable [multiple] [minute]
+    usage: /<command> [enable/disable/reload] [multiple] [minute]
     aliases: [mexp, multiexperience]
 permissions:
   multiexp.admin:
