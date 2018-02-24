@@ -19,3 +19,7 @@ Please open new Issues.
 This plugin is open-source in github.
 
 You CANT reload this plugin ANYWAY!
+
+## Thanks
+![Server CT](SCT.gif)
+Server CT
