@@ -12,6 +12,9 @@ Bukkit: https://dev.bukkit.org/projects/multi-experience/
 
 Spigot: https://www.spigotmc.org/resources/multi-experience.53558/
 
+## Need help?
+Please open new Issues.
+
 ## Copyright
 This plugin is open-source in github.
 
