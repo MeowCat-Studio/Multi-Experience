@@ -4,7 +4,7 @@ Let your experience multiable.
 ## Future Freatures
 1. Player Experience Card [ ]
 2. Fix Auto Broadcast Bug [ ]
-3. Placeholder API Support [X]
+3. Placeholder API Support [ok]
 4. None [ ]
 
 ## How to download
