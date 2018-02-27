@@ -1,15 +1,22 @@
 name: MultiExperience
 main: org.meowcat.MultiExperience.Main
-author: MeowCat Studio MlgmXyysd
-version: 1.2.0
+author: MeowCat Studio
+version: 1.3.0
+website: http://www.meowcat.org/
+database: false
+description: Let your experience multiable.
 softdepend: [PlaceholderAPI]
+load: POSTWORLD
 prefix: MultiExperience
 commands:
-  multiexp:
+  multiexperience:
     permission: multiexp.admin
     description: Multi Experience plugin Info
-    usage: /<command> [enable/disable/reload] [multiple] [minute]
-    aliases: [mexp, multiexperience]
+    usage: /<command> [set/enable/disable/reload] [multiple] [minute] [true]
+    permission-message: You do not have enough permission to do this.
+    aliases: [mexp, multiexp]
 permissions:
   multiexp.admin:
     default: op
+  multiexp.vip:
+    default: false

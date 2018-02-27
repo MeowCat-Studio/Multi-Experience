@@ -1,35 +1,77 @@
+##############################################
+# Multi Experience Plugin Configuration File #
+# Create by MeowCat Studio MlgmXyysd.        #
+# @author MeowCat Studio MlgmXyysd           #
+# @lastupdatetime 2018/2/26                  #
+# Copyright (C) 2014-2018 MeowCat Studio     #
+# Powered by MlgmXyysd All Rights Reserved.  #
+##############################################
+
+# Plugin Configuration
 configuration:
+  # Configuration File Version [Int]
+  # Do NOT try modify this!!!
+  version: 4
+  # Enable Update Check [Int]
+  # Only Check,not download.If you disable it, Please go to plugin post usually.
+  update-check: true
+  # Enable Automatic Broadcast if "multiexp-enabled" is "true" [Boolean]
   auto-broadcast-enabled: true
+  # Automatic Broadcast interval time (minute) [Int]
   broadcast-interval-time: 1
+  # Enable Player Death Experience Protect [Boolean]
+  # Need gamerule "keepInventory" is "false"
   death-protect: false
+  # Enable Multi Experience [Boolean]
+  # You can use "/multiexperience enable" or "/multiexperience disable" in game or console
   multiexp-enabled: false
+  # Enable Very Important Person Multi Experience [Boolean]
+  vip-enabled: true
+# Plugin Language
 language:
-  msg-signal-1: "\u00a7aSet "
-  msg-signal-2: " times experience for "
-  msg-signal-3: " minute(s) successfully!"
-  msg-getexp-1: "\u00a7a"
-  msg-getexp-2: " times experience activities is holding, You have got "
-  msg-getexp-3: " experience(s)!"
-  msg-expired: "\u00a74Multi experience activity has expired!"
-  msg-ended: "\u00a74Multi experience activity has ended!"
-  msg-holding-1: "\u00a7a"
-  msg-holding-2: " times experience activities is holding, Duration time "
-  msg-holding-3: " minute(s)!"
-  msg-broadcast-1: "\u00a7aNow "
-  msg-broadcast-2: " times experience activities has opened, Duration of "
-  msg-broadcast-3: " minute(s)!"
-  reload: "\u00a7aPlugin reloaded."
-  usage: "\u00a7eUsage: /multiexp [enable/disable/reload] [multiple] [minute]"
-  papi-minutes: " Minute(s)"
-  papi-expired: "\u00a74Expired"
-  papi-hooking: "Hooking PlaceholderAPI"
-  papi-success: "Hook PlaceholderAPI Successfully!"
-  papi-failed: "Hook PlaceholderAPI Failed!"
-  console-enable: "Plugin Enabled."
-  console-disable: "Plugin Disabled."
-  console-latest: "Good job,you are using the latest version."
-  console-newver: "There are newer version: "
+  # Switch Language [String]
+  # You can add new language at the bottom
+  # If you choose an non-existent language, plugin may be crash.
+  use: "en-us"
+  # English
+  en-us:
+    msg-signal-1: "\u00a7aSet "
+    msg-signal-2: " times experience for "
+    msg-signal-3: " minute(s) successfully!"
+    msg-getexp-1: "\u00a7a"
+    msg-getexp-2: " times experience activities is holding, You have got "
+    msg-getexp-3: " experience(s)!"
+    msg-expired: "\u00a74Multi experience activity has expired!"
+    msg-ended: "\u00a74Multi experience activity has ended!"
+    msg-holding-1: "\u00a7a"
+    msg-holding-2: " times experience activities is holding, Duration time "
+    msg-holding-3: " minute(s)!"
+    msg-broadcast-1: "\u00a7aNow "
+    msg-broadcast-2: " times experience activities has opened, Duration of "
+    msg-broadcast-3: " minute(s)!"
+    msg-failure: "\u00a7cThe activity is expried, please set first."
+    syntaxerror-integer: "\u00a7cSyntax error!This argument should be integer."
+    reload: "\u00a7aPlugin reloaded."
+    usage: "\u00a7eUsage: /multiexp [set/enable/disable/reload] [multiple] [minute] [true]"
+    papi-minutes: " Minute(s)"
+    papi-expired: "\u00a74Expired"
+    papi-hooking: "Hooking PlaceholderAPI"
+    papi-success: "Hook PlaceholderAPI Successfully!"
+    papi-failed: "Hook PlaceholderAPI Failed!"
+    console-enable: "Plugin Enabled."
+    console-disable: "Plugin Disabled."
+    console-latest: "Good job,you are using the latest version."
+    console-newver: "There are newer version: "
+    update-check-disabled: "\u00a74You disabled update check,Please go to plugin post to check update!"
+# Multi Experience Configuration
 multiexp:
+  # Very Important Person Multi Experience [Int]
+  # Need "vip-enabled" is "true"
+  vip: 2
+  # Experience Multiple [Int]
+  # Needn't modify
   multiple: 2
+  # Multi Experience Activity remain time [Long]
+  # Needn't modify
   tick-time: 0
  
