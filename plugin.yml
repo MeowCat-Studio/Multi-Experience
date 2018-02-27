@@ -1,7 +1,7 @@
 name: MultiExperience
 main: org.meowcat.MultiExperience.Main
 author: MeowCat Studio
-version: 1.3.0
+version: 1.4.0
 website: http://www.meowcat.org/
 database: false
 description: Let your experience multiable.
